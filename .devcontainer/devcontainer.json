@@ -1,0 +1,29 @@
+{
+    "name": "C++",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "puya",
+    "workspaceFolder": "/workspace/",
+    "runArgs": [
+        "--privileged puya"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "files.eol": "\n",
+                "editor.formatOnSave": true,
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "[c]": {
+                    "editor.defaultFormatter": "xaver.clang-format"
+                },
+                "[cpp]": {
+                    "editor.defaultFormatter": "xaver.clang-format"
+                }
+            },
+            "extensions": [
+                "streetsidesoftware.code-spell-checker",
+                "xaver.clang-format",
+                "marus25.cortex-debug"
+            ]
+        }
+    }
+}

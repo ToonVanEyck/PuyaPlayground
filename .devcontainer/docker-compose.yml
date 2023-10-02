@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    puya:
+        build:
+            context: ..
+            dockerfile: .devcontainer/Dockerfile
+        volumes:
+            - ..:/workspace
+            - ${HOME}/.ssh:/home/vscode/.ssh
+        device_cgroup_rules:
+            - "c 188:* rmw"
+        user: vscode
+        command: sleep infinity
+        network_mode: "host"   
+        privileged: true
