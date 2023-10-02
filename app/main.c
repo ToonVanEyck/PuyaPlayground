@@ -1,7 +1,7 @@
 /***
  * Demo: LED Toggle
  *
- * PA0   ------> LED+
+ * PB5   ------> LED+
  * GND   ------> LED-
  */
 #include "py32f0xx_bsp_printf.h"
@@ -25,7 +25,6 @@ static void APP_GPIO_Config(void) {
   GPIO_InitTypeDef GPIO_InitStruct;
 
   __HAL_RCC_GPIOB_CLK_ENABLE();
-  // PA0
   GPIO_InitStruct.Pin = GPIO_PIN_5;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
