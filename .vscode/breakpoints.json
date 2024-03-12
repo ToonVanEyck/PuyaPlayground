@@ -1,0 +1,17 @@
+[
+  {
+    "location": "/app/main.c",
+    "line": [
+      {
+        "line": 229,
+        "character": 0
+      },
+      {
+        "line": 229,
+        "character": 0
+      }
+    ],
+    "enabled": true,
+    "logMessage": "\"[dbg] ADC: %04ld  %04ld  %04ld  %04ld  %04ld  %04ld\\r\\n\" aADCxConvertedData[0] aADCxConvertedData[1] aADCxConvertedData[2] aADCxConvertedData[3] aADCxConvertedData[4] aADCxConvertedData[5]"
+  }
+]

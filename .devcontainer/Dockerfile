@@ -13,14 +13,18 @@ WORKDIR /tmp
 
 # install all required packages
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && \
-    apt -y install --no-install-recommends wget figlet clang-format cppcheck catch2 linux-tools-virtual hwdata
+    apt -y install --no-install-recommends wget figlet clang-format cppcheck hwdata sudo bash-completion ssh gdb-multiarch udev usbutils
 
-# cleanup tmp
-RUN rm -rf /tmp/*
+# Create symlink to new gdb
+RUN ln -s /usr/bin/gdb-multiarch /usr/bin/arm-none-eabi-gdb
+
+# Add user to dialout group to enable rootless tty acces for serial monitor eextention
+RUN adduser vscode dialout
+RUN adduser vscode plugdev
 
 # install pyocd
 RUN apt -y install python3 python3-pip netcat && \
-    python3 -mpip install -U pyocd
+    python3 -mpip install -U pyocd && \
     wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tgz && \
     tar xzf Python-3.8.12.tgz && \
     cd Python-3.8.12 && \
@@ -45,5 +49,7 @@ RUN cd /usr/share/figlet && wget https://raw.githubusercontent.com/xero/figlet-f
 # add a git lgb alias
 RUN git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
 
+# cleanup tmp
+RUN rm -rf /tmp/*
 # pyocd gdbserver -u remote:172.20.206.105:5555 --config Misc/pyocd.yaml --target py32f003x8 
 # https://stackoverflow.com/questions/42938992/usbip-in-docker

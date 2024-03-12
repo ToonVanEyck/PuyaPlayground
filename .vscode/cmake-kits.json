@@ -1,0 +1,6 @@
+[
+    {
+        "name": "puya-kit",
+        "toolchainFile": "../puya_toolchain.cmake"
+    }
+]

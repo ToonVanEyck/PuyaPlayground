@@ -1,5 +1,31 @@
 {
+    "remote.extensionKind": {
+        "ms-vscode.vscode-serial-monitor": [
+            "workspace"
+        ]
+    },
     "files.associations": {
-        "py32f0xx_bsp_printf.h": "c"
+        "py32f0xx_bsp_printf.h": "c",
+        "py32f0xx_hal_def.h": "c",
+        "main.h": "c"
+    },
+    "actionButtons": {
+        "commands": [
+            {
+                "name": "⚙️ Configure",
+                "command": "cmake --toolchain puya_toolchain.cmake -S . -B build",
+                "singleInstance": true
+            },
+            {
+                "name": "🔨 Build",
+                "command": "cmake --build build",
+                "singleInstance": true,
+            },
+            {
+                "name": "⚡ Flash",
+                "command": "cmake --build build --target flash",
+                "singleInstance": true
+            }
+        ]
     }
 }

@@ -12,5 +12,4 @@ services:
             - "c 188:* rmw"
         user: vscode
         command: sleep infinity
-        network_mode: "host"   
-        privileged: true
+        network_mode: "host"  

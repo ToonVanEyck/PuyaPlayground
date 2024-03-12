@@ -6,15 +6,16 @@
     "configurations": [
         {
             "name": "py32 Debug",
-            "armToolchainPath": "/opt/gcc-arm/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi/bin/",
-            "toolchainPrefix": "arm-none-eabi",
+            // "armToolchainPath": "/opt/gcc-arm/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi/bin/",
+            // "toolchainPrefix": "arm-none-eabi",
             "cwd": "${workspaceFolder}/build",
             "executable": "./PuyaPlayground.elf",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "pyocd",
             "runToEntryPoint": "main",
-            "showDevDebugOutput": "raw"
+            "showDevDebugTimestamps": true,
+            "showDevDebugOutput": "none",
         }
     ]
 }
