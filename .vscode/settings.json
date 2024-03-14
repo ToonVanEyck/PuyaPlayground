@@ -7,24 +7,30 @@
     "files.associations": {
         "py32f0xx_bsp_printf.h": "c",
         "py32f0xx_hal_def.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "cstddef": "c"
     },
     "actionButtons": {
         "commands": [
             {
                 "name": "⚙️ Configure",
                 "command": "cmake --toolchain puya_toolchain.cmake -S . -B build",
-                "singleInstance": true
+                "terminalName": "bash"
             },
             {
                 "name": "🔨 Build",
                 "command": "cmake --build build",
-                "singleInstance": true,
+                "terminalName": "bash",
             },
             {
                 "name": "⚡ Flash",
                 "command": "cmake --build build --target flash",
-                "singleInstance": true
+                "terminalName": "bash"
+            },
+            {
+                "name": "👀 Rtt",
+                "command": "cmake --build build --target rtt",
+                "terminalName": "bash"
             }
         ]
     }
