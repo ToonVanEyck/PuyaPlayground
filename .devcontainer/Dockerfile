@@ -20,7 +20,7 @@ RUN rm -rf /tmp/*
 
 # install pyocd
 RUN apt -y install python3 python3-pip netcat && \
-    python3 -mpip install -U pyocd
+    python3 -mpip install -U pyocd && \
     wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tgz && \
     tar xzf Python-3.8.12.tgz && \
     cd Python-3.8.12 && \
